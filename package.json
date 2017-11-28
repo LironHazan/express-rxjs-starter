@@ -1,0 +1,26 @@
+{
+  "name": "feed_micro_service",
+  "version": "1.0.0",
+  "description": "feed",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.14.0",
+    "install": "^0.10.1",
+    "lodash": "^4.17.4",
+    "npm": "^5.4.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "liron hazan",
+  "license": "ISC"
+}
