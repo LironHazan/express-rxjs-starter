@@ -5,10 +5,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const animals = require('./animals-farm');
 
-const feeds = require('./animals-farm');
 const app = express();
-
+app.set('view engine', 'pug'); //template engine
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -17,7 +17,7 @@ app.options('*', cors());
 
 const router = express.Router();
 app.use('/api',router);
-router.use('/feeds', feeds.controller);
+router.use('/animals', animals.controller);
 
 app.use(express.static(path.join(__dirname, '..')));
 app.use(express.static(path.join(__dirname, '..', 'dist')));

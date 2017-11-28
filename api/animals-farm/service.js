@@ -1,4 +1,4 @@
-export class AnimalsService {
+class AnimalsService {
 
     constructor(){
 
@@ -6,8 +6,8 @@ export class AnimalsService {
     // lazy loading, client will ask for x items (limit) it will be the length of the returned array,
 
     simplePager(pageIndex=0, limit=10, data){
-        const startCount =  data[pageIndex*limit]; //default 0
-        const animals = data.slice(startCount, limit);
-        return animals;
+        const startCountIndex =  pageIndex*limit; //default 0
+        return data.slice(startCountIndex, limit);
     }
 }
+module.exports = AnimalsService;
