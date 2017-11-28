@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const feeds = require('./services');
+const feeds = require('./animals-farm');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));

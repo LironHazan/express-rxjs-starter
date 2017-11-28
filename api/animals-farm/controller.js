@@ -1,9 +1,11 @@
 'use strict';
-
+import {AnimalsService} from './service';
 import animals from '../MOCK_DATA.json';
 
 exports.fetchAllAnimals = (req, res) => {
-    res.send(animals);
+    const service = new AnimalsService();
+    service.simplePager(req.limit, req.pageIndex, animals);
+    res.send();
 };
 
 exports.filterBy = (req, res) => {
