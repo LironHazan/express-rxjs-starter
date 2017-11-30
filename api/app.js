@@ -8,7 +8,6 @@ const cors = require('cors');
 const animals = require('./animals-farm');
 
 const app = express();
-app.set('view engine', 'pug'); //template engine
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -20,7 +19,7 @@ app.use('/api',router);
 router.use('/animals', animals.controller);
 
 app.use(express.static(path.join(__dirname, '..')));
-app.use(express.static(path.join(__dirname, '..', 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
