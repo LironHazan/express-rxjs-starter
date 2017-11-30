@@ -8,7 +8,7 @@ class AnimalsService {
       const deleteCount =  pageIndex*limit;
       console.log(data);
       const animals = data.reduce((acc, value, index) => {
-        if(deleteCount<=index) {
+        if(deleteCount <= index) {
           acc.push(value);
         }
         return acc;
