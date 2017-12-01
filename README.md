@@ -1,7 +1,10 @@
-** tiny express service for fetching animals and filtering animals by..
-** using nodejs, Expressjs and RXjs - all in ES2015
-** inspired by : https://www.youtube.com/watch?v=pttDh4ILxT4&t=2s
-** instructions:
+Tiny express service for fetching imaginary animals and filtering animals by..
+
+Stack: nodejs + express and Rxjs - all in ES2015,
+vanilla js..
+
+inspired by : https://www.youtube.com/watch?v=pttDh4ILxT4&t=2s
+- instructions:
 
 	- clone the project
 	- run npm i
