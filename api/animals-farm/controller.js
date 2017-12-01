@@ -2,7 +2,7 @@
 const AnimalsService = require('./service');
 const animals = require('../MOCK_DATA.json');
 
-const pageLimit = 25;
+const pageLimit = 100;
 
 // http://localhost:3000/api/animals/fetch
 exports.fetchAllAnimals = (req, res) => {
