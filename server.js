@@ -1,6 +1,6 @@
 'use strict';
 
-const app = require('./api/app');
+const app = require('./src/app');
 const http = require('http');
 
 process.title='liron_pb';
