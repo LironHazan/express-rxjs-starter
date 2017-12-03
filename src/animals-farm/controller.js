@@ -4,17 +4,18 @@ const animals = require('../MOCK_DATA.json');
 
 const pageLimit = 100;
 
-// http://localhost:3000/api/animals/fetch
 exports.fetchAllAnimals = (req, res) => {
-    const service = new AnimalsService();
+    const service = new AnimalsService(animals);
     const size = animals.length / pageLimit;
-    service.simplePager(req.query.pageIndex, pageLimit, animals)
+    service.simplePager(req.query.pageIndex, pageLimit)
       .then(members => {
-      res.send({members: members.slice(0, pageLimit), size});
+        const animalsPerPage = members.slice(0, pageLimit);
+      res.send({members: animalsPerPage, size});
       }).catch(err => {console.log(err)});
 };
 
-exports.filterBy = (req, res) => {
-    const animals = animals; // todo: rxjs filter logic
-    res.send(animals);
+exports.sortBy = (req, res) => {
+  const service = new AnimalsService(animals);
+  const sorted = service.sortBy(req.value);
+  res.send(sorted);
 };

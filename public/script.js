@@ -4,6 +4,7 @@
   const createNode = (element) => document.createElement(element);
   const append = (parent, element) => parent.appendChild(element);
   const getNode = (selector) => document.querySelector(selector);
+
   // drawers
   const paginate = (event) => {
     const index = parseInt(event.currentTarget.innerHTML)-1;
@@ -43,6 +44,24 @@
       animals.removeChild(animals.firstChild);
     }
   };
+
+  const callSortBy = (event) => {
+    // fetch('http://localhost:3000/api/animals/sort?value='+ event.target.value)
+    //   .then((resp) => resp.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     //removeNodesFromList();
+    //     //drawAnimalsList(data.members);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const selector = getNode('.sort-selector');
+    selector.onchange = callSortBy;
+  }, false);
 
   // get info from the server
   const initPage = () => {

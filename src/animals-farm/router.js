@@ -7,6 +7,7 @@ const controller = require('./controller');
 router.get('/fetch', controller.fetchAllAnimals);
 router.get('/fetch/:pageIndex', controller.fetchAllAnimals);
 
-router.get('/filter', controller.filterBy);
+router.get('/sort', controller.sortBy);
+router.get('/sort/:value', controller.sortBy);
 
 module.exports = router;
