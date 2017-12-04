@@ -8,20 +8,19 @@ class AnimalsService {
     // lazy loading, client will ask for x items (limit) it will be the length of the returned array,
     simplePager(pageIndex=0, limit=10, data) {
       const deleteCount =  pageIndex*limit;
-      //const result = this._source.slice(deleteCount, deleteCount+limit);
-      //console.log(result);
+
       const source$ = Rx.Observable.from(this._source || data) // make an observable of the array
-      .reduce((acc, value, index) => {
+      .scan((acc, value, index) => {
         if(deleteCount <= index) { // neglect all that smaller than the selected page
           acc.push(value);
         }
-        return acc;
+        return acc.slice(0, limit);
       }, []);
 
     const observer = {
       next: i => {console.log(JSON.stringify(i))},
       error: err => {console.log(err)},
-      complete: () => {}
+      complete: (c) => {console.log(`completed!`)}
     };
 
     source$.subscribe(observer);

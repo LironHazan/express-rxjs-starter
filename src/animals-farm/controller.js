@@ -9,8 +9,7 @@ exports.fetchAllAnimals = (req, res) => {
     const size = animals.length / pageLimit;
     service.simplePager(req.query.pageIndex, pageLimit)
       .then(members => {
-        const animalsPerPage = members.slice(0, pageLimit);
-      res.send({members: animalsPerPage, size});
+      res.send({members, size});
       }).catch(err => {console.log(err)});
 };
 
