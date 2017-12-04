@@ -20,7 +20,7 @@ class AnimalsService {
     const observer = {
       next: i => {console.log(JSON.stringify(i))},
       error: err => {console.log(err)},
-      complete: (c) => {console.log(`completed!`)}
+      complete: () => {console.log(`completed!`)}
     };
 
     source$.subscribe(observer);
