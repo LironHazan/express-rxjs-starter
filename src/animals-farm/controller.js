@@ -8,9 +8,9 @@ exports.fetchAllAnimals = (req, res) => {
     const service = new AnimalsService(animals);
     const size = animals.length / pageLimit;
     service.simplePager(req.query.pageIndex, pageLimit)
-      .then(members => {
+      .subscribe(members => {
       res.send({members, size});
-      }).catch(err => {console.log(err)});
+      }, err => {console.log(err)});
 };
 
 exports.sortBy = (req, res) => {
