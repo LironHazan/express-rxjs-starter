@@ -1,0 +1,20 @@
+@import './global/variable.scss';
+
+@font-face {
+	font-family: 'MyFont';
+	src: url('../fonts/kinetic/HussarBoldWeb.otf') format('otf'),
+		url('../fonts/kinetic/HussarBoldWeb.woff') format('woff');
+
+	font-weight: 600;
+	font-style: normal;
+}
+
+.apply-font {
+	color: red;
+	font-family: 'MyFont';
+}
+.wrapper {
+	display: inline-flex;
+	justify-content: space-around;
+	width: 40%
+}
