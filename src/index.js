@@ -1,10 +1,13 @@
-(() => {
+import { cube } from './app/test.module';
 
-  //utils
+//utils
   const createNode = (element) => document.createElement(element);
   const append = (parent, element) => parent.appendChild(element);
   const getNode = (selector) => document.querySelector(selector);
 
+  if(cube(4) && cube(4) === 64) {
+      console.log('import modules works !!!!');
+  }
   // drawers
   const paginate = (event) => {
     const index = parseInt(event.currentTarget.innerHTML)-1;
@@ -78,4 +81,3 @@
 
   initPage();
 
-})();
